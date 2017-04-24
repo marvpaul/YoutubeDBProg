@@ -24,12 +24,15 @@ public class Menu {
         Scanner sc = new Scanner(System.in);
         System.out.println("1 - Read table");
         System.out.println("2 - Delete table entry");
+        System.out.println("3 - Add entry");
         int option = HelpFunctions.readInt("Choose an option:", sc);
 
         if(option == 1){
             selectTable(1);
         } else if(option == 2) {
             selectTable(2);
+        } else if(option == 3) {
+            selectTable(3);
         } else{
             System.out.println("Wasn't a valid option, try again!");
             printMainMenu();
@@ -52,6 +55,8 @@ public class Menu {
                 PrintTable.printTable(option);
             } else if(task == 2){
                 DeleteTable.deleteTable(option);
+            } else if(task == 3){
+                CreateEntry.createNewEntry(option);
             }
 
         } else{

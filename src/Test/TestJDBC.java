@@ -25,7 +25,7 @@ public class TestJDBC {
 
         while (rs.next()) {
             String x = rs.getString(1);
-            System.out.println(rs);
+            System.out.println(x);
         }
     }
 }

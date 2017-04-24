@@ -10,8 +10,17 @@ import java.sql.Statement;
  */
 public class Categorizes implements Categorizesable{
     private int idcategory, idvideo;
+    
+    
 
-    public int getIdcategory() {
+    public Categorizes(int idcategory, int idvideo) {
+		this.idcategory = idcategory;
+		this.idvideo = idvideo;
+	}
+    public Categorizes() {
+	}
+
+	public int getIdcategory() {
         return idcategory;
     }
 
@@ -30,7 +39,7 @@ public class Categorizes implements Categorizesable{
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeQuery("INSERT INTO categorizes(idcategory, idvideo) VALUES (" + this.idcategory + ", " + this.idvideo + ");");
+        stmt.executeUpdate("INSERT INTO categorizes(idcategory, idvideo) VALUES (" + this.idcategory + ", " + this.idvideo + ");");
     }
 
     @Override

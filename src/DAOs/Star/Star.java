@@ -12,7 +12,21 @@ public class Star implements Starable{
     private int id;
     private String name, profile, image;
 
-    public int getId() {
+    
+    
+    public Star(int id, String name, String profile, String image) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.profile = profile;
+		this.image = image;
+	}
+
+    public Star() {
+ 		
+ 	}
+    
+	public int getId() {
         return id;
     }
 
@@ -47,7 +61,7 @@ public class Star implements Starable{
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeQuery("INSERT INTO tag(id, name, profile, image) VALUES (" + this.id + ", '" + this.name + "', '" +
+        stmt.executeUpdate("INSERT INTO tag(id, name, profile, image) VALUES (" + this.id + ", '" + this.name + "', '" +
                 profile + "', '" + image + "');");
     }
 

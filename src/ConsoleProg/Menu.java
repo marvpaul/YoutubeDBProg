@@ -2,6 +2,7 @@ package ConsoleProg;
 
 import DAOs.Category.Categoryable;
 import DAOs.DBConnection;
+import DAOs.Watcher.Watcher;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -13,11 +14,10 @@ import java.util.Scanner;
 public class Menu {
     public static String[] tables = {"Categorizes", "Category", "Comment", "Rating", "Star", "Tag", "Tags", "Video", "Watcher", "Watchers"};
     public static Scanner sc;
-
+    //TODO: in Comment objekt Attribut name umbenennen
     public static void main(String[] args) throws SQLException {
         System.out.println("Establish connection to database. This may take a while ...");
         DBConnection.createConnection();
-        Categoryable.delete(1);
         printMainMenu();
     }
     public static void printMainMenu() throws SQLException {
@@ -25,6 +25,8 @@ public class Menu {
         System.out.println("1 - Read table");
         System.out.println("2 - Delete table entry");
         System.out.println("3 - Add entry");
+        System.out.println("4 - Show ");
+        System.out.println("5 - Exit ");
         int option = HelpFunctions.readInt("Choose an option:", sc);
 
         if(option == 1){
@@ -32,8 +34,17 @@ public class Menu {
         } else if(option == 2) {
             selectTable(2);
         } else if(option == 3) {
-            selectTable(3);
-        } else{
+            try{
+                selectTable(3);
+            } catch (Exception e){
+                System.out.println("Creating entry wasn't successful.");
+                printMainMenu();
+            }
+        } else if(option == 4) {
+            selectTable(4);
+        } else if(option == 5) {
+            System.exit(0);
+        }else{
             System.out.println("Wasn't a valid option, try again!");
             printMainMenu();
         }
@@ -45,11 +56,10 @@ public class Menu {
      */
     public static void selectTable(int task) throws SQLException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Choose a table:");
         for (int i = 0; i < tables.length; i++) {
             System.out.println((i+1) + " - " + tables[i]);
         }
-        int option = HelpFunctions.readInt("Choose an option:", sc);
+        int option = HelpFunctions.readInt("Choose a table", sc);
         if(option > 0 && option <= tables.length){
             if(task == 1){
                 PrintTable.printTable(option);
@@ -57,6 +67,8 @@ public class Menu {
                 DeleteTable.deleteTable(option);
             } else if(task == 3){
                 CreateEntry.createNewEntry(option);
+            }else if(task == 4){
+                GoThroughEntries.goThrough(option);
             }
 
         } else{

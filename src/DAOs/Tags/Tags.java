@@ -11,7 +11,18 @@ import java.sql.Statement;
 public class Tags implements Tagsable{
     private int idtag, idvideo;
 
-    public int getIdtag() {
+        
+    public Tags(int idtag, int idvideo) {
+		super();
+		this.idtag = idtag;
+		this.idvideo = idvideo;
+	}
+    
+    public Tags() {
+ 		
+ 	}
+
+	public int getIdtag() {
         return idtag;
     }
 
@@ -30,7 +41,7 @@ public class Tags implements Tagsable{
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeQuery("INSERT INTO tag(idtag, idvideo) VALUES (" + this.idtag + ", " + this.idvideo + ");");
+        stmt.executeUpdate("INSERT INTO tag(idtag, idvideo) VALUES (" + this.idtag + ", " + this.idvideo + ");");
     }
 
     @Override

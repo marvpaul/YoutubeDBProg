@@ -11,8 +11,21 @@ import java.sql.Statement;
 public class Comment implements Commentable{
     private int id, idvideo, idwatcher;
     private String name;
+    
+    
+    public Comment(int id, int idvideo, int idwatcher, String name) {
+		super();
+		this.id = id;
+		this.idvideo = idvideo;
+		this.idwatcher = idwatcher;
+		this.name = name;
+	}
 
-    public int getId() {
+    public Comment() {
+		
+	}
+    
+	public int getId() {
         return id;
     }
 
@@ -47,7 +60,7 @@ public class Comment implements Commentable{
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeQuery("INSERT INTO tag(id, name, idvideo, idwatcher) VALUES (" + this.id + ", '" + this.name + "', " +
+        stmt.executeUpdate("INSERT INTO tag(id, name, idvideo, idwatcher) VALUES (" + this.id + ", '" + this.name + "', " +
                         idvideo + ", " + idwatcher + ");");
     }
 

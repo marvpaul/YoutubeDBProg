@@ -11,7 +11,19 @@ public class Watcher implements Watcherable {
     private int id;
     private String name;
 
-    public int getId() {
+    
+    
+    public Watcher(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+    
+    public Watcher() {
+		
+	}
+
+	public int getId() {
         return id;
     }
 
@@ -30,7 +42,7 @@ public class Watcher implements Watcherable {
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeQuery("INSERT INTO watcher(id, name) VALUES (" + this.id + ", '" + this.name + "');");
+        stmt.executeUpdate("INSERT INTO watcher(id, name) VALUES (" + this.id + ", '" + this.name + "');");
     }
 
     @Override

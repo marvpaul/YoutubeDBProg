@@ -14,7 +14,24 @@ TODO: Warum hat ein Rating eine Watcher id
 public class Rating implements Ratingable{
     private int idstar,starcount1, starcount2, starcount3, starcount4, starcount5, idwatcher;
 
-    public int getIdstar() {
+    
+    public Rating(int idstar, int starcount1, int starcount2, int starcount3, int starcount4, int starcount5,
+			int idwatcher) {
+		super();
+		this.idstar = idstar;
+		this.starcount1 = starcount1;
+		this.starcount2 = starcount2;
+		this.starcount3 = starcount3;
+		this.starcount4 = starcount4;
+		this.starcount5 = starcount5;
+		this.idwatcher = idwatcher;
+	}
+
+    public Rating() {
+		
+	}
+    
+	public int getIdstar() {
         return idstar;
     }
 
@@ -73,7 +90,7 @@ public class Rating implements Ratingable{
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeQuery("INSERT INTO tag(idstar, starcount1, starcount2, starcount3, starcount4, starcount5, idwatcher) VALUES (" + this.idstar + ", " + this.starcount1 + ", " + this.starcount2+
+        stmt.executeUpdate("INSERT INTO tag(idstar, starcount1, starcount2, starcount3, starcount4, starcount5, idwatcher) VALUES (" + this.idstar + ", " + this.starcount1 + ", " + this.starcount2+
                 ", " + this.starcount3 + ", " + this.starcount4 + ", " + this.starcount5+ ", " + this.idwatcher + ");");
     }
 

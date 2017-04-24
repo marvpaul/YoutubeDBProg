@@ -12,7 +12,17 @@ public class Tag implements Tagable{
     private int id;
     private String name;
 
-    public int getId() {
+    public Tag(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+
+    public Tag() {
+		
+	}
+    
+	public int getId() {
         return id;
     }
 
@@ -31,7 +41,7 @@ public class Tag implements Tagable{
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeQuery("INSERT INTO tag(id, name) VALUES (" + this.id + ", '" + this.name + "');");
+        stmt.executeUpdate("INSERT INTO tag(id, name) VALUES (" + this.id + ", '" + this.name + "');");
     }
 
     @Override

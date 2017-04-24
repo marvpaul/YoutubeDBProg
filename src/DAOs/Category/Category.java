@@ -16,7 +16,20 @@ public class Category implements Categoryable {
         return id;
     }
 
-    public void setId(int id) {
+        
+    public Category(int id, String name, String previewImage) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.previewImage = previewImage;
+	}
+    
+    public Category() {
+		
+	}
+
+
+	public void setId(int id) {
         this.id = id;
     }
 
@@ -39,7 +52,7 @@ public class Category implements Categoryable {
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeQuery("INSERT INTO tag(id, name, previewimage) VALUES (" + this.id + ", '" + this.name + "', '" + previewImage + "');");
+        stmt.executeUpdate("INSERT INTO tag(id, name, previewimage) VALUES (" + this.id + ", '" + this.name + "', '" + previewImage + "');");
     }
 
     @Override

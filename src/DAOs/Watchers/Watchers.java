@@ -11,7 +11,18 @@ import java.sql.Statement;
 public class Watchers implements Watchersable{
     private int idwatcher, idvideo;
 
-    public int getIdwatcher() {
+    
+    public Watchers(int idwatcher, int idvideo) {
+		super();
+		this.idwatcher = idwatcher;
+		this.idvideo = idvideo;
+	}
+
+    public Watchers() {
+
+	}
+    
+	public int getIdwatcher() {
         return idwatcher;
     }
 
@@ -30,7 +41,7 @@ public class Watchers implements Watchersable{
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeQuery("INSERT INTO tag(idwatcher, idvideo) VALUES (" + this.idwatcher + ", " + this.idvideo + ");");
+        stmt.executeUpdate("INSERT INTO tag(idwatcher, idvideo) VALUES (" + this.idwatcher + ", " + this.idvideo + ");");
     }
 
     @Override

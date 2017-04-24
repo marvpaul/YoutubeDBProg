@@ -12,7 +12,22 @@ public class Video implements Videoable{
     private int id, viewcount, idstar;
     private String name, duration, description, url;
 
-    public int getId() {
+    public Video(int id, int viewcount, int idstar, String name, String duration, String description, String url) {
+		super();
+		this.id = id;
+		this.viewcount = viewcount;
+		this.idstar = idstar;
+		this.name = name;
+		this.duration = duration;
+		this.description = description;
+		this.url = url;
+	}
+    
+    public Video() {
+		
+	}
+
+	public int getId() {
         return id;
     }
 
@@ -71,7 +86,7 @@ public class Video implements Videoable{
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeQuery("INSERT INTO tag(id, name, duration, description, viewcount, url, idstar) VALUES ("
+        stmt.executeUpdate("INSERT INTO tag(id, name, duration, description, viewcount, url, idstar) VALUES ("
                 + this.id + ", '" + this.name + "', '" + this.description + "',"  + this.viewcount + ", '"
                 + this.url + "', " + this.idstar + ");");
     }

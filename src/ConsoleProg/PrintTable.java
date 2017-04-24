@@ -12,6 +12,8 @@ import DAOs.Watcher.Watcherable;
 import DAOs.Watchers.Watchersable;
 
 import java.sql.SQLException;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * A class which provides a method to print out a table in the database

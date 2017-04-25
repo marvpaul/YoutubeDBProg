@@ -18,11 +18,10 @@ import DAOs.Video.Video;
 import DAOs.Video.Videoable;
 import DAOs.Watcher.Watcher;
 import DAOs.Watcher.Watcherable;
-import DAOs.Watchers.Watchers;
-import DAOs.Watchers.Watchersable;
+import DAOs.Watches.Watches;
+import DAOs.Watches.Watchesable;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -69,7 +68,7 @@ public class GoThroughEntries {
                 iterateThroughEntries(watcher, true, 0, true);
                 break;
             case 10:
-                List<Watchers> watchers = Watchersable.getAll();
+                List<Watches> watchers = Watchesable.getAll();
                 iterateThroughEntries(watchers, true, 0, true);
                 break;
         }

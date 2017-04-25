@@ -1,8 +1,6 @@
-package DAOs.Watchers;
+package DAOs.Watches;
 
 import DAOs.DBConnection;
-import DAOs.Tags.Tags;
-import DAOs.Watcher.Watcher;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +11,7 @@ import java.util.List;
 /**
  * Created by Marvin Krüger S0556109.
  */
-public interface Watchersable {
+public interface Watchesable {
     public static final String TABLENAME = "watches";
     void add() throws SQLException;
 
@@ -23,16 +21,16 @@ public interface Watchersable {
                 " AND idvideo = " + keyvideo + ";");
     };
 
-    static List<Watchers> getAll() throws SQLException {
+    static List<Watches> getAll() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM " + TABLENAME + ";");
-        List<Watchers> watchersList = new ArrayList<Watchers>();
+        List<Watches> watchesList = new ArrayList<Watches>();
         while (rs.next()) {
-            Watchers w = new Watchers();
+            Watches w = new Watches();
             w.setIdwatcher(rs.getInt("idwatcher"));
             w.setIdvideo(rs.getInt("idvideo"));
-            watchersList.add(w);
+            watchesList.add(w);
         }
-        return watchersList;
+        return watchesList;
     };
 }

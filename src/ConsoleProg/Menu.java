@@ -12,7 +12,7 @@ import java.util.Scanner;
  * to manage the given database
  */
 public class Menu {
-    public static String[] tables = {"Categorizes", "Category", "Comment", "Rating", "Star", "Tag", "Tags", "Video", "Watcher", "Watchers"};
+    public static String[] tables = {"Categorizes", "Category", "Comment", "Rating", "Star", "Tag", "Tags", "Video", "Watcher", "Watches"};
     public static Scanner sc;
     //TODO: in Comment objekt Attribut name umbenennen
     public static void main(String[] args) throws SQLException {

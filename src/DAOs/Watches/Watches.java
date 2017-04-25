@@ -1,4 +1,4 @@
-package DAOs.Watchers;
+package DAOs.Watches;
 
 import DAOs.DBConnection;
 
@@ -8,17 +8,17 @@ import java.sql.Statement;
 /**
  * Created by Marvin Krüger S0556109.
  */
-public class Watchers implements Watchersable{
+public class Watches implements Watchesable {
     private int idwatcher, idvideo;
 
     
-    public Watchers(int idwatcher, int idvideo) {
+    public Watches(int idwatcher, int idvideo) {
 		super();
 		this.idwatcher = idwatcher;
 		this.idvideo = idvideo;
 	}
 
-    public Watchers() {
+    public Watches() {
 
 	}
     
@@ -46,7 +46,7 @@ public class Watchers implements Watchersable{
 
     @Override
     public String toString() {
-        return "Watchers{" +
+        return "Watches{" +
                 "idwatcher=" + idwatcher +
                 ", idvideo=" + idvideo +
                 '}';

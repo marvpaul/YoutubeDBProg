@@ -4,13 +4,12 @@ import DAOs.Categorizes.Categorizesable;
 import DAOs.Category.Categoryable;
 import DAOs.Comment.Commentable;
 import DAOs.Rating.Ratingable;
-import DAOs.Star.Star;
 import DAOs.Star.Starable;
 import DAOs.Tag.Tagable;
 import DAOs.Tags.Tagsable;
 import DAOs.Video.Videoable;
 import DAOs.Watcher.Watcherable;
-import DAOs.Watchers.Watchersable;
+import DAOs.Watches.Watchesable;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -54,7 +53,7 @@ public class DeleteTable {
                     Watcherable.delete(keys.get(0));
                     break;
                 case 10:
-                    Watchersable.delete(keys.get(0), keys.get(1));
+                    Watchesable.delete(keys.get(0), keys.get(1));
                     break;
             }
             System.out.println("Entry was deleted successful!");

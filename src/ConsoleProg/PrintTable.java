@@ -9,11 +9,9 @@ import DAOs.Tag.Tagable;
 import DAOs.Tags.Tagsable;
 import DAOs.Video.Videoable;
 import DAOs.Watcher.Watcherable;
-import DAOs.Watchers.Watchersable;
+import DAOs.Watches.Watchesable;
 
 import java.sql.SQLException;
-import java.util.List;
-import java.util.Objects;
 
 /**
  * A class which provides a method to print out a table in the database
@@ -54,7 +52,7 @@ public class PrintTable {
                 Watcherable.getAll().forEach(System.out::println);
                 break;
             case 10:
-                Watchersable.getAll().forEach(System.out::println);
+                Watchesable.getAll().forEach(System.out::println);
                 break;
         }
         Menu.printMainMenu();

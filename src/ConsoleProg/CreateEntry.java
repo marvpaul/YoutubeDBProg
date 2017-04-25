@@ -4,25 +4,15 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import DAOs.Categorizes.Categorizes;
-import DAOs.Categorizes.Categorizesable;
 import DAOs.Category.Category;
-import DAOs.Category.Categoryable;
 import DAOs.Comment.Comment;
-import DAOs.Comment.Commentable;
 import DAOs.Rating.Rating;
-import DAOs.Rating.Ratingable;
 import DAOs.Star.Star;
-import DAOs.Star.Starable;
 import DAOs.Tag.Tag;
-import DAOs.Tag.Tagable;
 import DAOs.Tags.Tags;
-import DAOs.Tags.Tagsable;
 import DAOs.Video.Video;
-import DAOs.Video.Videoable;
 import DAOs.Watcher.Watcher;
-import DAOs.Watcher.Watcherable;
-import DAOs.Watchers.Watchers;
-import DAOs.Watchers.Watchersable;
+import DAOs.Watches.Watches;
 
 public class CreateEntry {
 	public static void createNewEntry(int table) throws SQLException {
@@ -153,7 +143,7 @@ public class CreateEntry {
 		Scanner sc = new Scanner(System.in);
 		int watcherid = HelpFunctions.readInt("Enter watcher key", sc);
 		int videoid = HelpFunctions.readInt("Enter video key", sc);
-		Watchers cat = new Watchers(watcherid, videoid); 
+		Watches cat = new Watches(watcherid, videoid);
 		cat.add(); 	
 	}
 	

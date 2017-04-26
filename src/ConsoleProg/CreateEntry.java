@@ -14,7 +14,18 @@ import DAOs.Video.Video;
 import DAOs.Watcher.Watcher;
 import DAOs.Watches.Watches;
 
+
+/**
+ * Creates Entrys in tables
+ * @author Uli Overdieck (s0556056)
+ * @version 1.0.1
+ *
+ */
 public class CreateEntry {
+	/**
+	 * @param table number for input
+	 * @throws SQLException when entry is not possible or connection fails
+	 */
 	public static void createNewEntry(int table) throws SQLException {
         switch (table){
             case 1:
@@ -45,12 +56,17 @@ public class CreateEntry {
             	createEntryWatcher(); 
                 break;
             case 10:
-            	createEntryWatchers();
+            	createEntryWatches();
                 break;
         }
         Menu.printMainMenu();
     }
 	
+	
+	/**
+	 * prompts for entry in Categorizes table
+	 * @throws SQLException when entry is not possible or connection fails
+	 */
 	private static void createEntryCategorizes() throws SQLException{
 		Scanner sc = new Scanner(System.in);
 		int videokey = HelpFunctions.readInt("Enter video key", sc);
@@ -59,6 +75,11 @@ public class CreateEntry {
 		cat.add(); 	
 	}
 	
+	
+	/**
+	 * prompts for entry in Category table
+	 * @throws SQLException when entry is not possible or connection fails
+	 */
 	private static void createEntryCategory() throws SQLException{
 		Scanner sc = new Scanner(System.in);
 		int categorykey = HelpFunctions.readInt("Enter category key", sc);
@@ -68,6 +89,11 @@ public class CreateEntry {
 		cat.add(); 	
 	}
 	
+	
+	/**
+	 * prompts for entry in Comment table
+	 * @throws SQLException when entry is not possible or connection fails
+	 */
 	private static void createEntryComment() throws SQLException{
 		Scanner sc = new Scanner(System.in);
 		int commentkey = HelpFunctions.readInt("Enter comment key", sc);
@@ -79,6 +105,11 @@ public class CreateEntry {
 		cat.add(); 	
 	}
 	
+	
+	/**
+	 * prompts for entry in Rating table
+	 * @throws SQLException when entry is not possible or connection fails
+	 */
 	private static void createEntryRating() throws SQLException{
 		Scanner sc = new Scanner(System.in);
 		int idstar = HelpFunctions.readInt("Enter star key", sc);
@@ -92,6 +123,11 @@ public class CreateEntry {
 		cat.add(); 	
 	}
 	
+	
+	/**
+	 * prompts for entry in Star table
+	 * @throws SQLException when entry is not possible or connection fails
+	 */
 	private static void createEntryStar() throws SQLException{
 		Scanner sc = new Scanner(System.in);
 		int starkey = HelpFunctions.readInt("Enter star key", sc);
@@ -102,6 +138,11 @@ public class CreateEntry {
 		cat.add(); 	
 	}
 	
+	
+	/**
+	 * prompts for entry in Tag table
+	 * @throws SQLException when entry is not possible or connection fails
+	 */
 	private static void createEntryTag() throws SQLException{
 		Scanner sc = new Scanner(System.in);
 		int tagid = HelpFunctions.readInt("Enter tag key", sc);
@@ -110,6 +151,11 @@ public class CreateEntry {
 		cat.add(); 	
 	}
 	
+	
+	/**
+	 * prompts for entry in Tags table
+	 * @throws SQLException when entry is not possible or connection fails
+	 */
 	private static void createEntryTags() throws SQLException{
 		Scanner sc = new Scanner(System.in);
 		int tagid = HelpFunctions.readInt("Enter tag key", sc);
@@ -118,6 +164,11 @@ public class CreateEntry {
 		cat.add(); 	
 	}
 	
+	
+	/**
+	 * prompts for entry in Video table
+	 * @throws SQLException when entry is not possible or connection fails
+	 */
 	private static void createEntryVideo() throws SQLException{
 		Scanner sc = new Scanner(System.in);
 		int videoid = HelpFunctions.readInt("Enter video key", sc);
@@ -131,6 +182,11 @@ public class CreateEntry {
 		cat.add(); 	
 	}
 	
+	
+	/**
+	 * prompts for entry in Watcher table
+	 * @throws SQLException when entry is not possible or connection fails
+	 */
 	private static void createEntryWatcher() throws SQLException{
 		Scanner sc = new Scanner(System.in);
 		int watcherid = HelpFunctions.readInt("Enter watcher key", sc);
@@ -139,7 +195,12 @@ public class CreateEntry {
 		cat.add(); 	
 	}
 	
-	private static void createEntryWatchers() throws SQLException{
+	
+	/**
+	 * prompts for entry in Watches table
+	 * @throws SQLException when entry is not possible or connection fails
+	 */
+	private static void createEntryWatches() throws SQLException{
 		Scanner sc = new Scanner(System.in);
 		int watcherid = HelpFunctions.readInt("Enter watcher key", sc);
 		int videoid = HelpFunctions.readInt("Enter video key", sc);

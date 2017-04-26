@@ -1,9 +1,7 @@
 package ConsoleProg;
 
-import DAOs.Category.Categoryable;
-import DAOs.DBConnection;
-import DAOs.Watcher.Watcher;
 
+import DAOs.DBConnection;
 import java.sql.SQLException;
 import java.util.Scanner;
 

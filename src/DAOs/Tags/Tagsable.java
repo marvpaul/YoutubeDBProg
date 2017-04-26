@@ -1,7 +1,6 @@
 package DAOs.Tags;
 
 import DAOs.DBConnection;
-import DAOs.Tag.Tag;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

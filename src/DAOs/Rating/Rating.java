@@ -90,7 +90,7 @@ public class Rating implements Ratingable{
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeUpdate("INSERT INTO tag(idstar, starcount1, starcount2, starcount3, starcount4, starcount5, idwatcher) VALUES (" + this.idstar + ", " + this.starcount1 + ", " + this.starcount2+
+        stmt.executeUpdate("INSERT INTO rating(idstar, starcount1, starcount2, starcount3, starcount4, starcount5, idwatcher) VALUES (" + this.idstar + ", " + this.starcount1 + ", " + this.starcount2+
                 ", " + this.starcount3 + ", " + this.starcount4 + ", " + this.starcount5+ ", " + this.idwatcher + ");");
     }
 

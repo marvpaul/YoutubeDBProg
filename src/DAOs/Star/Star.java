@@ -61,7 +61,7 @@ public class Star implements Starable{
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeUpdate("INSERT INTO tag(id, name, profile, image) VALUES (" + this.id + ", '" + this.name + "', '" +
+        stmt.executeUpdate("INSERT INTO star(id, name, profile, image) VALUES (" + this.id + ", '" + this.name + "', '" +
                 profile + "', '" + image + "');");
     }
 

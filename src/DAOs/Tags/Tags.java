@@ -41,7 +41,7 @@ public class Tags implements Tagsable{
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeUpdate("INSERT INTO tag(idtag, idvideo) VALUES (" + this.idtag + ", " + this.idvideo + ");");
+        stmt.executeUpdate("INSERT INTO tags(idtag, idvideo) VALUES (" + this.idtag + ", " + this.idvideo + ");");
     }
 
     @Override

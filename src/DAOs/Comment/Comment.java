@@ -60,7 +60,7 @@ public class Comment implements Commentable{
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeUpdate("INSERT INTO tag(id, name, idvideo, idwatcher) VALUES (" + this.id + ", '" + this.name + "', " +
+        stmt.executeUpdate("INSERT INTO comment(id, name, idvideo, idwatcher) VALUES (" + this.id + ", '" + this.name + "', " +
                         idvideo + ", " + idwatcher + ");");
     }
 

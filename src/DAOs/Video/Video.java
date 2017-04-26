@@ -86,7 +86,7 @@ public class Video implements Videoable{
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeUpdate("INSERT INTO tag(id, name, duration, description, viewcount, url, idstar) VALUES ("
+        stmt.executeUpdate("INSERT INTO video(id, name, duration, description, viewcount, url, idstar) VALUES ("
                 + this.id + ", '" + this.name + "', '" + this.description + "',"  + this.viewcount + ", '"
                 + this.url + "', " + this.idstar + ");");
     }

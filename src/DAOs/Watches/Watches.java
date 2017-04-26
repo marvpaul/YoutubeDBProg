@@ -41,7 +41,7 @@ public class Watches implements Watchesable {
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeUpdate("INSERT INTO tag(idwatcher, idvideo) VALUES (" + this.idwatcher + ", " + this.idvideo + ");");
+        stmt.executeUpdate("INSERT INTO watches(idwatcher, idvideo) VALUES (" + this.idwatcher + ", " + this.idvideo + ");");
     }
 
     @Override

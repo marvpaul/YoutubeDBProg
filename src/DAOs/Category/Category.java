@@ -52,7 +52,7 @@ public class Category implements Categoryable {
     @Override
     public void add() throws SQLException {
         Statement stmt = DBConnection.con.createStatement();
-        stmt.executeUpdate("INSERT INTO tag(id, name, previewimage) VALUES (" + this.id + ", '" + this.name + "', '" + previewImage + "');");
+        stmt.executeUpdate("INSERT INTO category(id, name, previewimage) VALUES (" + this.id + ", '" + this.name + "', '" + previewImage + "');");
     }
 
     @Override

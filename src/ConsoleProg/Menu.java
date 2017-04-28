@@ -40,6 +40,7 @@ public class Menu {
             try{
                 selectTable(3);
             } catch (Exception e){
+                e.printStackTrace();
                 System.out.println("Creating entry wasn't successful.");
                 printMainMenu();
             }

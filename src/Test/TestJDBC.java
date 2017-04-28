@@ -1,5 +1,7 @@
 package Test;
 
+import ConsoleProg.HelpFunctions;
+
 import java.sql.*;
 
 /**

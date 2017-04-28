@@ -18,6 +18,11 @@ public class Menu {
         DBConnection.createConnection();
         printMainMenu();
     }
+
+    /**
+     * Method which handles the user interaction for main menu and print out this menu
+     * @throws SQLException in case the SQL request for getting tables content failed
+     */
     public static void printMainMenu() throws SQLException {
         Scanner sc = new Scanner(System.in);
         System.out.println("1 - Read table");
@@ -41,6 +46,7 @@ public class Menu {
         } else if(option == 4) {
             selectTable(4);
         } else if(option == 5) {
+            DBConnection.closeConnection();
             System.exit(0);
         }else{
             System.out.println("Wasn't a valid option, try again!");

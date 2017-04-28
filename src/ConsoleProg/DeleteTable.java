@@ -17,10 +17,16 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Created by Marvin Krüger S0556109.
+ * Handle deleting an entry in a certain table
  */
 public class DeleteTable {
     public static Scanner sc;
+
+    /**
+     * Call the specific delete method of a table object
+     * @param table the table to delete from
+     * @throws SQLException
+     */
     public static void deleteTable(int table) throws SQLException {
         List<Integer> keys = askForKey(table);
         try{
@@ -65,6 +71,11 @@ public class DeleteTable {
 
     }
 
+    /**
+     * Method to determine the key(s) to select a table row
+     * @param table the selected table
+     * @return list of keys
+     */
     public static List<Integer> askForKey(int table){
         sc = new Scanner(System.in);
         List<Integer> keys = new ArrayList<Integer>();

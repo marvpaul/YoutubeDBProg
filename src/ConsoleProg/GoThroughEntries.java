@@ -26,9 +26,15 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Created by Marvin Krüger S0556109.
+ * Handle navigate through the entries of a table
  */
 public class GoThroughEntries {
+
+    /**
+     * Get all entries of a certain table and call a function to handle navigation with console
+     * @param table the selected table number
+     * @throws SQLException in case something during load the content fails
+     */
     public static void goThrough(int table) throws SQLException {
         switch (table){
             case 1:
@@ -80,7 +86,7 @@ public class GoThroughEntries {
             if(first){
                 System.out.println(list.get(0));
                 String statementString = checkIfNext();
-                while ((statementString.equals("n")) && (statementString.equals("p")) && (statementString.equals("1"))){
+                while (!(statementString.equals("n")) || !(statementString.equals("p")) || !(statementString.equals("1"))){
                     System.out.println("Please enter a valid statement");
                     statementString = checkIfNext();
                 }
@@ -94,7 +100,7 @@ public class GoThroughEntries {
             } else{
                 int nextKey = printElem(list, key, next);
                 String statementString = checkIfNext();
-                while ((statementString.equals("n")) && (statementString.equals("p")) && (statementString.equals("1"))){
+                while (!(statementString.equals("n")) || !(statementString.equals("p")) || !(statementString.equals("1"))){
 
                     System.out.println("Please enter a valid statement");
                     statementString = checkIfNext();
@@ -114,6 +120,14 @@ public class GoThroughEntries {
 
     }
 
+    /**
+     * Return the next / previous element of the list
+     * @param list the list with data
+     * @param key the last printed key
+     * @param next true if the next entry should be print, false if the previous entry should be printed
+     * @param <T> the class of the table object
+     * @return the index of the next / previous element
+     */
     private static <T> int printElem(List<T> list, int key, boolean next){
         if(next){
             if(list.size()-1 >= key+1){

@@ -86,7 +86,7 @@ public class GoThroughEntries {
             if(first){
                 System.out.println(list.get(0));
                 String statementString = checkIfNext();
-                while (!(statementString.equals("n")) || !(statementString.equals("p")) || !(statementString.equals("1"))){
+                while (!(statementString.equals("n")) && !(statementString.equals("p")) && !(statementString.equals("1"))){
                     System.out.println("Please enter a valid statement");
                     statementString = checkIfNext();
                 }
@@ -100,7 +100,7 @@ public class GoThroughEntries {
             } else{
                 int nextKey = printElem(list, key, next);
                 String statementString = checkIfNext();
-                while (!(statementString.equals("n")) || !(statementString.equals("p")) || !(statementString.equals("1"))){
+                while (!(statementString.equals("n")) && !(statementString.equals("p")) && !(statementString.equals("1"))){
 
                     System.out.println("Please enter a valid statement");
                     statementString = checkIfNext();

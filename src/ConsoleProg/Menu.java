@@ -60,6 +60,7 @@ public class Menu {
      */
     public static void selectTable(int task) throws SQLException {
         Scanner sc = new Scanner(System.in);
+        System.out.println("0 - Main Menu");
         for (int i = 0; i < tables.length; i++) {
             System.out.println((i+1) + " - " + tables[i]);
         }
@@ -75,6 +76,8 @@ public class Menu {
                 GoThroughEntries.goThrough(option);
             }
 
+        } else if (option == 0) {
+            printMainMenu();
         } else{
             System.out.println("Wasn't a valid option, try again!");
             selectTable(task);
